@@ -6,9 +6,24 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            // testing git
-            Console.WriteLine("Testing Git");
+            try
+            {
+                double result;
+                InputConverter inputConverter = new InputConverter();
+                CalculatorEngine calculatorEngine = new CalculatorEngine();
+
+                double firstNumber = inputConverter.ConvertInputToDouble(Console.ReadLine());
+                double secondNumber = inputConverter.ConvertInputToDouble(Console.ReadLine());
+                string operation = Console.ReadLine();
+
+                result = calculatorEngine.Calculate(firstNumber, secondNumber, operation);
+
+                Console.WriteLine(result);
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
     }
 }
