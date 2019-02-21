@@ -7,6 +7,8 @@ namespace SimpleCalculator
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            // testing git
+            Console.WriteLine("Testing Git");
         }
     }
 }
